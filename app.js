@@ -12,6 +12,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({"extended" : true}));
 app.use('/',router);
 app.use('/api/users/', users);
-app.use('/*1', html);
+app.use('/*', html);
 app.listen(3000);
 console.log("Listening to PORT 3000");
