@@ -7,10 +7,11 @@ var app         =   express();
 var fs = require('fs')
 var morgan = require('morgan')
 var accessLogStream = fs.createWriteStream(__dirname + '/access.log', {flags: 'a'})
-app.use(morgan('combined', {stream: accessLogStream}))
+app.use(morgan('combined', {stream: accessLogStream}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({"extended" : true}));
 app.use('/',router);
+app.use('/static', express.static(__dirname + '/public'));
 app.use('/api/users/', users);
 app.use('/*', html);
 app.listen(3000);

@@ -15,13 +15,10 @@ exports.adduser = function(req, res) {
 };
 exports.find=function(req,res){
   var result = userDAO.getuser(req,res);
-
 result.exec(function(err,users){
-
     resHandler.success(res, users);
 });
 };
-
 exports.updateuser=function(req,res){
   req.body.updatedOn = new Date();
       userDAO.updateuser(req,res);
