@@ -11,8 +11,8 @@ app.use(morgan('combined', {stream: accessLogStream}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({"extended" : true}));
 app.use('/',router);
-app.use('/static', express.static(__dirname + '/public'));
+app.use('/static', express.static(__dirname + '/public'))
 app.use('/api/users/', users);
 app.use('/*', html);
 app.listen(3000);
-console.log("Listening to PORT 3000");
+console.log("APP Listening to PORT 3000");
