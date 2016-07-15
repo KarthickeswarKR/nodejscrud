@@ -15,4 +15,4 @@ app.use('/static', express.static(__dirname + '/public'))
 app.use('/api/users/', users);
 app.use('/*', html);
 app.listen(3000);
-console.log("APP Listening to PORT 3000");
+console.log("Listening to PORT 3000");
